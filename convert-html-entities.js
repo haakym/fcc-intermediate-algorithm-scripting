@@ -1,5 +1,25 @@
 // https://www.freecodecamp.com/challenges/convert-html-entities
 
+// solution without using replace ...
+
+function convertHTML(str) {
+  const htmlEntities = {
+		"\&": "&amp;",
+		"\<": "&lt;",
+		"\>": "&gt;",
+		"\"": "&quot;",
+		"\'": "&apos;"
+  };
+    
+  return str.split("")
+    .map(function(val) {
+      return htmlEntities[val] ? htmlEntities[val] : val;
+    })
+    .join("");
+}
+
+// solution using replace (incomplete!)
+
 function convertHTML(str) {
   const htmlEntities = [
 	{"character": "\&", "entity": "&amp;"},
